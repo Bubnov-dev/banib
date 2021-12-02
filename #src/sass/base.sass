@@ -1,17 +1,24 @@
 @import "fonts.sass"
-    
+
 /* Экраны */
-$desktop: 1280px
-$tablet: 900px
-$mobile: 568px
-$small-mobile: 360px
+$xs: 0
+$sm: 576px
+$md: 768px
+$lg: 992px
+$xl: 1200px
+$xxl: 1400px
+
+
 
 /* Цвета */
 $dark: #333333;
+$dark-text: #4F4F4F;
+
 $yellow: #F4E9BF;
 $red: #DA5C3E;
 $light: #FFF9E2;
 $light-grey: #E5E5E5;
+$light-back: #F2F2F2
 $grey: #828282;
 
 
@@ -27,9 +34,34 @@ body
     padding: 0
     overflow-x: hidden
     font-family: 'Futura New'
+    color: $dark
 
-.container
-    padding: 0 92px
+.container 
+    position: relative
+    padding-bottom: 1px
+    &> *
+        padding-left: 12px
+        padding-right: 12px
+        @media (min-width: 991.98px) 
+            padding-left: 32px
+            padding-right: 32px
+
+        
+        @media (min-width: 1199.98px)
+            padding-left: 72px
+            padding-right: 72px
+
+
+        @media (min-width: 1399.98px)
+            padding-left: 92px
+            padding-right: 92px
+
+            
+
+.container--no-p
+    padding: 0
+    &> *
+        padding: unset
 h1
     font-size: 48px;
     font-style: normal;
@@ -39,7 +71,11 @@ h1
     text-align: left;
 
 h2
-    font-size: 36px;
+    font-size: 7vw;
+
+    @media screen and ( min-width: $md )
+        max-width: 60%
+        font-size: 36px;
     font-style: normal;
     font-weight: 600;
     line-height: 45px;
@@ -64,7 +100,8 @@ h2
         line-height: 22px;
         letter-spacing: 0em;
         text-align: left;
-        color: $red
+        color: $dark-text
+        margin-top: 1rem
 
 .vert-h
     position: relative
@@ -74,18 +111,39 @@ h2
         position: absolute
         top: 0
         left: -87px
+
         content: ''
         width: 20px
         height: 251px
         background-color: $dark
 
+    &--red
+        &::before
+            background-color: $red
+            
+
+.subtitle
+    color: $dark-text
+    margin-top: 1rem
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+
 
 .btn
     border-radius: 10px;        
+.btn:focus
+    outline: 0;
+    box-shadow: none
 
 img
+    max-width: 100%
     border-radius: 20px 0px;
-
+.catalog .card
+    padding-right: 18px
 .card
     border: none
     &-body
@@ -93,7 +151,6 @@ img
         max-width: 321px
 
     &-title
-        text-decoration: underline
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
@@ -101,7 +158,7 @@ img
         letter-spacing: 0em;
         text-align: left;
         a
-            color: black
+            color: $dark
 
     &-text
         font-size: 15px;
@@ -127,7 +184,7 @@ img
             position: absolute
             content: "НОВИНКА"
             padding: 8px 16px
-            right: -16px
+            right: 2px
             background-color: $red
             font-size: 12px;
             font-style: normal;
@@ -140,6 +197,210 @@ img
 
 picture
     display: grid
+    grid-template-columns: 100%
+    grid-template-rows: 100%
+    &>*
+        grid-column: 1/2
+        grid-row: 1/2
 
 .yellow
     color: $yellow
+
+
+
+.hstack
+  &-sm
+    @media screen and ( min-width: $sm )
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+        align-self: stretch;
+  &-md
+    @media screen and ( min-width: $md )
+        display: flex;
+        flex-direction: row !important
+        align-items: center;
+        align-self: stretch;
+
+  &-lg
+    @media screen and ( min-width: $lg )
+        display: flex;
+        flex-direction: row !important
+        align-items: center;
+        align-self: stretch;
+
+  &-xl
+    @media screen and ( min-width: $xl )
+        display: flex;
+        flex-direction: row !important
+        align-items: center;
+        align-self: stretch;
+
+  &-xxl
+    @media screen and ( min-width: $xxl )
+        display: flex;
+        flex-direction: row !important
+        align-items: center;
+        align-self: stretch;
+
+
+.vstack
+  &-sm
+    @media screen and ( min-width: $sm )
+        display: flex;
+        flex-direction: column !important
+        align-items: center;
+        align-self: stretch;
+  &-md
+    @media screen and ( min-width: $md )
+        display: flex;
+        flex-direction: column !important
+        align-items: center;
+        align-self: stretch;
+
+  &-lg
+    @media screen and ( min-width: $lg )
+        display: flex;
+        flex-direction: column !important
+        align-items: center;
+        align-self: stretch;
+
+  &-xl
+    @media screen and ( min-width: $xl )
+        display: flex;
+        flex-direction: column !important
+        align-items: center;
+        align-self: stretch;
+
+  &-xxl
+    @media screen and ( min-width: $xxl )
+        display: flex;
+        flex-direction: column !important
+        align-items: center;
+        align-self: stretch;
+
+.gap
+    &-0
+        gap: 0 !important
+    &-sm-0
+        @media screen and ( min-width: $sm )
+            gap: 0rem !important
+    
+    &-md-0
+        @media screen and ( min-width: $md )
+            gap: 0rem !important
+          
+    &-lg-0
+        @media screen and ( min-width: $lg )
+            gap: 0rem !important
+            
+    &-xl-0
+        @media screen and ( min-width: $xl )
+            gap: 0rem !important
+
+    &-xxl-0
+        @media screen and ( min-width: $xxl )
+            gap: 0rem !important
+      
+    &-sm-1
+        @media screen and ( min-width: $sm )
+            gap: 0.25rem !important
+    
+    &-md-1
+        @media screen and ( min-width: $md )
+            gap: 0.25rem !important
+            
+    &-lg-1
+        @media screen and ( min-width: $lg )
+            gap: 0.25rem !important
+            
+    &-xl-1
+        @media screen and ( min-width: $xl )
+            gap: 0.25rem !important
+
+    &-xxl-1
+        @media screen and ( min-width: $xxl )
+            gap: 0.25rem !important
+      
+    &-sm-2 
+        @media screen and ( min-width: $sm )
+            gap: 0.5rem !important;
+            
+    &-md-2 
+        @media screen and ( min-width: $md )
+            gap: 0.5rem !important;
+
+    &-lg-2 
+        @media screen and ( min-width: $lg )
+            gap: 0.5rem !important;
+            
+    &-xl-2 
+        @media screen and ( min-width: $xl )
+            gap: 0.5rem !important;
+
+    &-xxl-2 
+        @media screen and ( min-width: $xxl )
+            gap: 0.5rem !important;
+
+    &-sm-3
+        @media screen and ( min-width: $sm )
+            gap: 1rem !important;
+
+    
+    &-md-3
+        @media screen and ( min-width: $md )
+            gap: 1rem !important;
+
+
+    &-lg-3
+        @media screen and ( min-width: $lg )
+            gap: 1rem !important;
+
+            
+    &-xl-3
+        @media screen and ( min-width: $xl )
+            gap: 1rem !important;
+
+    &-xxl-3
+        @media screen and ( min-width: $xxl )
+            gap: 1rem !important;
+
+    &-sm-4 
+        @media screen and ( min-width: $sm )
+            gap: 1.5rem !important;
+    
+    &-md-4 
+        @media screen and ( min-width: $md )
+            gap: 1.5rem !important;
+
+    &-lg-4 
+        @media screen and ( min-width: $lg )
+            gap: 1.5rem !important;
+
+    &-xl-4 
+        @media screen and ( min-width: $xl )
+            gap: 1.5rem !important;
+
+    &-xxl-4 
+        @media screen and ( min-width: $xxl )
+            gap: 1.5rem !important;
+
+    &-sm-5
+        @media screen and ( min-width: $sm )
+            gap: 3rem !important;
+    
+    &-md-5
+        @media screen and ( min-width: $md )
+            gap: 3rem !important;
+
+    &-lg-5
+        @media screen and ( min-width: $lg )
+            gap: 3rem !important;
+            
+    &-xl-5
+        @media screen and ( min-width: $xl )
+            gap: 3rem !important;
+
+    &-xxl-5
+        @media screen and ( min-width: $xxl )
+            gap: 3rem !important;
