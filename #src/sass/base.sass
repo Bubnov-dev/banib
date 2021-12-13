@@ -24,6 +24,17 @@ $light-back: #F2F2F2
 $grey: #828282;
 
 /*Общие стили*/  
+.article-content
+    ul
+        list-style: none
+        li
+            display: flex
+            gap: 1rem
+            &::before
+                display: grid
+                margin-top: 0.8rem
+                content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2240%22%20height%3D%221%22%20viewBox%3D%220%200%2040%201%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cline%20y1%3D%220.5%22%20x2%3D%2240%22%20y2%3D%220.5%22%20stroke%3D%22%23828282%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+
 .link-like
     text-decoration: underline
     &:hover
@@ -55,6 +66,8 @@ a:hover
     text-align: left;
     color: $dark-text
 
+p
+    margin-bottom: 1.5rem
 
 .big-text
     font-size: 21px;
@@ -77,6 +90,7 @@ a:hover
 
 .phone a
     text-decoration: none
+    font-weight: 600
 
 *
     box-sizing: border-box
@@ -87,6 +101,9 @@ body
     // overflow-x: hidden
     font-family: 'Futura New Book'
     color: $dark
+
+main 
+    overflow: hidden
 
 .container 
     position: relative
@@ -109,11 +126,13 @@ body
             padding-right: 92px
 
             
-
+.container--steam
+    width: 100% !important
+    max-width: 1920px
 .container--no-p
     padding: 0
     &> *
-        padding: unset
+        padding: unset 
 h1, h2, h3, h4, h5, h6, .fn
     font-family: 'Futura New'
 
@@ -135,7 +154,7 @@ h2
         max-width: 60%
         font-size: 36px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 600 !important;
     line-height: 45px;
     letter-spacing: 0em;
     text-align: left;
@@ -173,7 +192,7 @@ h2
 
 .vert-h
     position: relative
-    padding-top: 91px
+    padding-top: 72px
     margin-bottom: 42px
     &::before
         position: absolute
@@ -212,6 +231,7 @@ h2
     top: 0
     left: 11px
     .back-line
+
         height: 100%
         width: 1px
         background: $light-back
@@ -227,12 +247,36 @@ img
     border-radius: 20px 0px;
 .catalog .card
     padding-right: 18px
+    &-body
+        max-width: 321px
+
+.card--video
+    
+    picture::before
+        z-index: 100
+        grid-column: 1/2
+        grid-row: 1/2
+        place-self: center
+        content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2270%22%20height%3D%2270%22%20viewBox%3D%220%200%2070%2070%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M46.5455%2033.6286L32.0102%2023.0625C31.4767%2022.6759%2030.7686%2022.6176%2030.1839%2022.9181C29.5946%2023.2163%2029.2266%2023.8219%2029.2266%2024.4765V45.6016C29.2266%2046.2631%2029.5946%2046.8664%2030.1839%2047.1646C30.4332%2047.2904%2030.7057%2047.3532%2030.9806%2047.3532C31.3393%2047.3532%2031.7027%2047.2391%2032.0102%2047.0132L46.5455%2036.4564C47.0043%2036.1187%2047.2722%2035.5969%2047.2722%2035.0425C47.2746%2034.4788%2046.9997%2033.9593%2046.5455%2033.6286Z%22%20fill%3D%22%23DA5C3E%22%2F%3E%0A%3Cpath%20d%3D%22M35.0012%200.00195312C15.6674%200.00195312%200%2015.6693%200%2035.0031C0%2054.3299%2015.6674%2069.9926%2035.0012%2069.9926C54.3303%2069.9926%2070%2054.3276%2070%2035.0031C70.0023%2015.6693%2054.3303%200.00195312%2035.0012%200.00195312ZM35.0012%2064.1529C18.9005%2064.1529%205.84673%2051.1061%205.84673%2035.0031C5.84673%2018.9071%2018.9005%205.84402%2035.0012%205.84402C51.0995%205.84402%2064.1509%2018.9048%2064.1509%2035.0031C64.1533%2051.1061%2051.0995%2064.1529%2035.0012%2064.1529Z%22%20fill%3D%22%23DA5C3E%22%2F%3E%0A%3C%2Fsvg%3E%0A ');
+        
+
 .card
     border: none
     background: none
     &-body
         padding: 32px 0
-        max-width: 321px
+
+    &-plan-title
+        font-family: 'Futura New'
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    &-plan-complect
+        font-weight: 400
 
     &-title
         font-size: 18px;
@@ -295,6 +339,29 @@ picture
 .yellow
     color: $yellow
 
+.casual-slider
+    picture
+        padding: 0 20px
+
+.slick-slide > *
+    width: fit-content
+    margin: auto
+
+.slick-arrow
+    width: 55px
+    height: 55px
+    border-radius: 50%
+    background: white !important
+    display: grid
+    place-items: center
+    margin: 0 10%
+    z-index: 100
+    grid-template-columns: 100%
+    grid-template-rows: 100%
+    &::before
+        grid-column: 1/2
+        grid-row: 1/2
+        color: black !important
 
 
 .hstack

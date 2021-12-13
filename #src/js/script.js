@@ -1,15 +1,8 @@
 $(document).ready(function () {
     var image = document.getElementsByClassName('parallax');
     console.log(image)
-    paralax = new simpleParallax(image, {
-        delay: 0,
-        scale: 1.1,
-        overflow: true,
-        orientation: 'down',
-     });
-
-
-
+        
+    
      Fancybox.bind("a[data-fancybox]", {
         autoFocus: false,
         trapFocus: false
@@ -22,4 +15,18 @@ $(document).ready(function () {
     $('.dropdown').on("mouseleave", function(){ 
       $('.dropdown-toggle', this).trigger('click'); 
     });
+
+
+    //card.html
+
+    
+  $('.casual-slider').slick({
+    centerMode: true,
+    // centerPadding: '60px',
+    arrows: true,
+    centerMode: true,
+    centerPadding: '25%',
+    slidesToShow: 1
+  });
+			
 })

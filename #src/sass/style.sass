@@ -34,8 +34,9 @@
         align-items: center
         padding-bottom: 3px
         @media screen and ( max-width: $m-md )
-            width: 40vw
-            min-width: 215px
+            width: 215px
+            // width: 40vw
+            // min-width: 215px
             
     a, .link-like
         display: flex
@@ -58,6 +59,8 @@
     .my-dropdown-menu
         a
             color: $dark
+            text-decoration: underline
+
     .my-dropdown-menu
         display: none
     .my-dropdown:hover .my-dropdown-menu-wrapper
@@ -99,7 +102,7 @@
             content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2235%22%20height%3D%2224%22%20viewBox%3D%220%200%2035%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2220.435%22%20height%3D%2220.435%22%20transform%3D%22matrix%280.830465%200.55707%20-0.830465%200.55707%2017.9692%200.859375%29%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A')
 
     .my-dropdown-item
-        padding: .2em 2rem .2rem 2rem;
+        padding: .3em 2rem .3rem 2rem;
 
         display: block;
         width: 100%;
@@ -122,12 +125,22 @@
         
 
 .offcanvas
+    height: fit-content
+    max-height: 100vh
+    overflow: scroll
     width: 500px
     background: $red
     color: white
+    .btn-close
+        height: 34px
+        width: 34px
+        position: absolute
+        right: 53px
+        top: 56px
+        background-size: 100%;
     .line
         border-top: 1px dashed white
-    &-body, &-footer
+    &-body-my, &-footer
         flex-grow: unset
         padding-left: 6rem !important
     
@@ -148,6 +161,7 @@
 
 
     &__title a
+        color: $yellow
         margin-bottom: calc(18px - .25rem) 
         font-size: 24px  !important
         font-style: normal  !important
@@ -178,7 +192,7 @@
         grid-template-columns: 100% 
         gap: 52px
 
-        margin-top: 38px
+        margin-top: 3rem
         margin-bottom: 70px
 
         max-width: 525px;
@@ -314,6 +328,7 @@
                 
 
         &-contacts
+            max-width: 250px
             @media screen and ( min-width: $md )
                margin-top: 150px
             padding-left: 45px
@@ -353,13 +368,7 @@
             letter-spacing: 0em;
             text-align: left;
 
-            &::before
-                position: absolute
-
-                right: calc(100% + 34px)                    
-
-                content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M11.4038%209.9226C10.9138%209.4388%2010.302%209.4388%209.81506%209.9226C9.44362%2010.2909%209.07217%2010.6592%208.70697%2011.0338C8.60709%2011.1368%208.52281%2011.1587%208.40108%2011.09C8.16074%2010.9589%207.90479%2010.8528%207.67381%2010.7092C6.59694%2010.0319%205.69486%209.161%204.8958%208.18089C4.49938%207.69396%204.14667%207.17269%203.90008%206.58588C3.85014%206.46727%203.85951%206.38924%203.95627%206.29247C4.32771%205.93352%204.68979%205.5652%205.05499%205.19688C5.56377%204.68498%205.56377%204.08568%205.05186%203.57066C4.76158%203.27725%204.47129%202.99008%204.18101%202.69668C3.88135%202.39703%203.58483%202.09426%203.28205%201.79773C2.792%201.32016%202.18021%201.32016%201.69328%201.80085C1.31872%202.16917%200.959763%202.54685%200.578958%202.90893C0.226244%203.24291%200.0483268%203.65181%200.0108705%204.12938C-0.0484353%204.90659%200.141968%205.64011%200.410404%206.3549C0.959763%207.83442%201.79629%209.14851%202.81073%2010.3534C4.18101%2011.9827%205.8166%2013.2718%207.72999%2014.202C8.59149%2014.6202%209.48419%2014.9417%2010.4549%2014.9948C11.1229%2015.0323%2011.7035%2014.8637%2012.1686%2014.3424C12.4869%2013.9866%2012.8459%2013.662%2013.183%2013.3218C13.6824%2012.8161%2013.6855%2012.2043%2013.1892%2011.7049C12.5962%2011.1087%2012%2010.5157%2011.4038%209.9226Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3Cpath%20d%3D%22M10.8074%207.43503L11.9592%207.23839C11.7781%206.18025%2011.2787%205.22199%2010.5202%204.46038C9.71803%203.65819%208.70359%203.15253%207.58614%202.99646L7.42383%204.15448C8.28844%204.27622%209.07503%204.66639%209.69618%205.28754C10.283%205.87435%2010.6669%206.61724%2010.8074%207.43503Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3Cpath%20d%3D%22M12.6088%202.42842C11.2791%201.09872%209.59667%200.259073%207.73946%200L7.57715%201.15802C9.18153%201.38276%2010.6361%202.11004%2011.7847%203.25558C12.8741%204.34493%2013.5889%205.72145%2013.848%207.23531L14.9997%207.03866C14.697%205.28446%2013.8698%203.69257%2012.6088%202.42842Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3C%2Fsvg%3E%0A')
-
+            
         &-phone
             font-family: 'Futura New'
 
@@ -370,6 +379,11 @@
             letter-spacing: 0em;
             text-align: left;
             margin-bottom: 10px
+            position: relative
+            &::before
+                position: absolute
+                right: calc(100% + 34px)                    
+                content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2215%22%20height%3D%2215%22%20viewBox%3D%220%200%2015%2015%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M11.4038%209.9226C10.9138%209.4388%2010.302%209.4388%209.81506%209.9226C9.44362%2010.2909%209.07217%2010.6592%208.70697%2011.0338C8.60709%2011.1368%208.52281%2011.1587%208.40108%2011.09C8.16074%2010.9589%207.90479%2010.8528%207.67381%2010.7092C6.59694%2010.0319%205.69486%209.161%204.8958%208.18089C4.49938%207.69396%204.14667%207.17269%203.90008%206.58588C3.85014%206.46727%203.85951%206.38924%203.95627%206.29247C4.32771%205.93352%204.68979%205.5652%205.05499%205.19688C5.56377%204.68498%205.56377%204.08568%205.05186%203.57066C4.76158%203.27725%204.47129%202.99008%204.18101%202.69668C3.88135%202.39703%203.58483%202.09426%203.28205%201.79773C2.792%201.32016%202.18021%201.32016%201.69328%201.80085C1.31872%202.16917%200.959763%202.54685%200.578958%202.90893C0.226244%203.24291%200.0483268%203.65181%200.0108705%204.12938C-0.0484353%204.90659%200.141968%205.64011%200.410404%206.3549C0.959763%207.83442%201.79629%209.14851%202.81073%2010.3534C4.18101%2011.9827%205.8166%2013.2718%207.72999%2014.202C8.59149%2014.6202%209.48419%2014.9417%2010.4549%2014.9948C11.1229%2015.0323%2011.7035%2014.8637%2012.1686%2014.3424C12.4869%2013.9866%2012.8459%2013.662%2013.183%2013.3218C13.6824%2012.8161%2013.6855%2012.2043%2013.1892%2011.7049C12.5962%2011.1087%2012%2010.5157%2011.4038%209.9226Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3Cpath%20d%3D%22M10.8074%207.43503L11.9592%207.23839C11.7781%206.18025%2011.2787%205.22199%2010.5202%204.46038C9.71803%203.65819%208.70359%203.15253%207.58614%202.99646L7.42383%204.15448C8.28844%204.27622%209.07503%204.66639%209.69618%205.28754C10.283%205.87435%2010.6669%206.61724%2010.8074%207.43503Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3Cpath%20d%3D%22M12.6088%202.42842C11.2791%201.09872%209.59667%200.259073%207.73946%200L7.57715%201.15802C9.18153%201.38276%2010.6361%202.11004%2011.7847%203.25558C12.8741%204.34493%2013.5889%205.72145%2013.848%207.23531L14.9997%207.03866C14.697%205.28446%2013.8698%203.69257%2012.6088%202.42842Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3C%2Fsvg%3E%0A')
 
             a
                 color: $dark
@@ -390,11 +404,13 @@
 
 .steam
     position: absolute
-    right: 0
-    width: 50%
+    right: -10rem
+    top: -18rem
+    max-width: 70%;
+    padding: 0 !important
 
 .blog
-    overflow-x: hidden  
+    // overflow-x: hidden  
     margin-top: 94px
     .card
         &-info
@@ -488,7 +504,14 @@
 
     &-visit
         background: $light-back
-
+        @media screen and ( max-width: $m-md )
+            .container
+                width: 100% !important
+                max-width: 100% !important
+            &__info
+                max-width: 540px
+                margin: auto
+                position: static
         &-row
             @media screen and ( max-width: $m-md )
                 flex-direction: column-reverse !important
@@ -505,13 +528,14 @@
             picture 
                 width: 100%
                 height: 100%
+                min-height: 300px
 
             img
-                @media screen and ( min-width: $md )
-                    height: 100%
-                    max-width: unset
-                    position: absolute
-                    right: 0
+                // @media screen and ( min-width: $md )
+                height: 100%
+                max-width: unset
+                position: absolute
+                right: 0
 
     &-visit__info
         overflow: hidden
@@ -587,8 +611,10 @@
                     width: fit-content
 
         .footer-img
-            position: absolute
-            left: -0rem
+            &-wrapper
+                transform: scale(1.2)
+            position: relative
+            left: -5rem
             top: 8rem
 
             @media screen and ( max-width:  $md)
@@ -613,6 +639,8 @@
                 line-height: 23px;
                 letter-spacing: 0em;
                 text-align: left;
+                @media screen and ( max-width: $lg )
+                    font-size: 16px
 
             &__time
                 font-size: 14px;
@@ -628,6 +656,10 @@
 
                 color: $red
                 font-weight: 700
+
+                @media screen and ( max-width: $lg )
+                    font-size: 14px
+                    
                 
         &__info
             color: $grey
@@ -642,10 +674,11 @@
     &-imgs-f
         margin-top: 6rem
 
+.frame-info
+    .num-list
+        max-width: 376px
 .num-list
-    max-width: 376px
     &__item
-        font-family: Futura New;
         font-size: 16px;
         font-style: normal;
         line-height: 20px;
@@ -656,6 +689,15 @@
         font-family: 'Futura New'
 
         font-weight: 600;
+
+.base-price-info
+    .num-list
+        max-height: 542px
+        flex-wrap: wrap
+        gap: 1rem 3rem
+        &-num
+            width: 50%
+
 
 .add-info
     position: relative
@@ -708,18 +750,169 @@
             text-align: left;
             font-family: 'Futura New'
 
+.card-subhead
+    min-height: 74px  
+
+.cone-card
+    max-width: 308px
+
+.plans
+
+    .card
+        padding-right: 5rem
     
     
+.card__text-block
+    .big-text
+        max-width: 670px
+    .plain-text
+        max-width: 850px
     
     
+.catalog-back
+    display: flex
+    gap: 1rem
+    align-items: center
+    max-width: 350px;
+
+    a
+        color: white
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    &.white::before
+        content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2267%22%20height%3D%228%22%20viewBox%3D%220%200%2067%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.646446%203.64644C0.451187%203.8417%200.451187%204.15829%200.646446%204.35355L3.82843%207.53553C4.02369%207.73079%204.34027%207.73079%204.53553%207.53553C4.7308%207.34027%204.7308%207.02368%204.53553%206.82842L1.70711%203.99999L4.53553%201.17157C4.7308%200.976305%204.7308%200.659723%204.53553%200.464461C4.34027%200.269198%204.02369%200.269198%203.82843%200.464461L0.646446%203.64644ZM67%203.5L1%203.49999L1%204.49999L67%204.5L67%203.5Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+        
+
+    &.red::before
+        content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2267%22%20height%3D%228%22%20viewBox%3D%220%200%2067%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.646446%203.64644C0.451187%203.8417%200.451187%204.15829%200.646446%204.35355L3.82843%207.53553C4.02369%207.73079%204.34027%207.73079%204.53553%207.53553C4.7308%207.34027%204.7308%207.02368%204.53553%206.82842L1.70711%203.99999L4.53553%201.17157C4.7308%200.976305%204.7308%200.659723%204.53553%200.464461C4.34027%200.269198%204.02369%200.269198%203.82843%200.464461L0.646446%203.64644ZM67%203.5L1%203.49999L1%204.49999L67%204.5L67%203.5Z%22%20fill%3D%22%23DA5C3E%22%2F%3E%0A%3C%2Fsvg%3E%0A');
+        
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+.small-banner
+    background: $light
+
+.options
+    .card-body
+        padding-top: 28px
+        .card-title
+            margin-bottom: 1rem
+        .card-price
+            font-family: 'Futura New'
+            font-weight: 600
+        *
+            font-size: 16px  !important
+    &__and-more
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        max-width: 950px
+
+.construct-desc
+    &-item
+        display: flex
+        gap: 5rem
+    &__img
+        width: 50%
+    &__text
+        align-self: end
+        margin-bottom: 1.5rem
+        width: 50%
+
+
+    &__title
+        position: relative
+        font-family: 'Futura New'
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        &::before
+            content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%22150%22%20height%3D%228%22%20viewBox%3D%220%200%20150%208%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.646454%203.64643C0.451187%203.8417%200.451187%204.15828%200.646454%204.35354L3.82843%207.53552C4.0237%207.73078%204.34027%207.73078%204.53554%207.53552C4.73079%207.34026%204.73079%207.02368%204.53554%206.82841L1.70711%203.99999L4.53554%201.17156C4.73079%200.976298%204.73079%200.659716%204.53554%200.464453C4.34027%200.269191%204.0237%200.269191%203.82843%200.464453L0.646454%203.64643ZM150%203.5L1%203.49999L1%204.49999L150%204.5L150%203.5Z%22%20fill%3D%22%23333333%22%2F%3E%0A%3C%2Fsvg%3E%0A')
+            position: absolute
+            left: -11rem
+            top: -8%
+
+.blog-page
+    &__categories
+        display: flex
+        flex-wrap: wrap
+        gap: 0rem 2rem
+        @media screen and ( min-width: $m-md )
+            max-width: 75%
+
+        &-item
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 40px;
+            letter-spacing: 0em;
+
+            text-decoration: underline
+            &--active
+                text-decoration: none
+                font-weight: 600
+.blog__else-btn
+    border-radius: 5px
+    margin-top: 3rem
+    margin-bottom: 2rem
+    padding-top: 1rem
+    padding-bottom: 1rem
+    background: $light-back
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 1rem
+    color: $red
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+.blog__pagination
+    display: flex
+    justify-content: center
+    gap: 1rem
+    align-items: center
+
+    &-item
+        width: 40px
+        height: 40px
+        display: grid
+        place-items: center
+        border-radius: 5px
+        transition: .3s
+        font-size: 18px
+        &:hover
+            background: $light-back
+
+.article
+    p
+        color: $dark-text
+
+    &__banner-title
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $grey
+
+    .blog-nav
+        a
+            color: $dark-text
+
 // content: url('data:image/svg+xml;charset=utf-8,');
