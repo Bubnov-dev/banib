@@ -238,6 +238,16 @@ p {
   text-align: left;
 }
 
+.small-text {
+  color: #828282;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 .ask-question {
   color: #DA5C3E;
   display: grid;
@@ -1746,6 +1756,33 @@ picture > * {
 
 .contacts iframe {
   width: 100vw;
+}
+
+.contacts__wa-phone {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.contacts__small-title {
+  margin-bottom: .5rem;
+}
+
+.contacts__row {
+  --bs-gutter-x: 5rem;
+}
+
+.contacts__info {
+  max-width: 300px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.contacts__info img {
+  border-radius: 0;
 }
 
 @media screen and (min-width: 576px) {

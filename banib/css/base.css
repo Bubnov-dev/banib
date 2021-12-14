@@ -238,6 +238,16 @@ p {
   text-align: left;
 }
 
+.small-text {
+  color: #828282;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
 .ask-question {
   color: #DA5C3E;
   display: grid;
