@@ -160,6 +160,10 @@
 
 /*Общие стили*/
 
+a {
+  color: #333333;
+}
+
 .article-content ul {
   list-style: none;
 }
