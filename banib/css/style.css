@@ -329,7 +329,7 @@ h2 {
   font-size: 7vw;
   font-style: normal;
   font-weight: 600 !important;
-  line-height: 45px;
+  line-height: 125%;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -544,7 +544,7 @@ picture > * {
 }
 
 .casual-slider picture {
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .slick-slide > * {
@@ -997,6 +997,7 @@ picture > * {
 
 .about__add-info {
   margin-top: 83px;
+  gap: 1rem 0;
 }
 
 .about__add-info-imgs-big {
@@ -1009,7 +1010,6 @@ picture > * {
 
 .about__add-info-contacts {
   max-width: 250px;
-  padding-left: 45px;
 }
 
 .about__add-info-more {
@@ -1354,6 +1354,9 @@ picture > * {
   letter-spacing: 0em;
   text-align: left;
   color: #4F4F4F;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
 .num-list__num {
@@ -1362,7 +1365,6 @@ picture > * {
 }
 
 .base-price-info .num-list {
-  max-height: 542px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1rem 3rem;
@@ -1508,18 +1510,12 @@ picture > * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 5rem;
-}
-
-.construct-desc__img {
-  width: 50%;
 }
 
 .construct-desc__text {
   -ms-flex-item-align: end;
       align-self: end;
   margin-bottom: 1.5rem;
-  width: 50%;
 }
 
 .construct-desc__title {
@@ -1754,8 +1750,22 @@ picture > * {
   display: none;
 }
 
+.ymaps3x0--main-engine-container {
+  -webkit-filter: grayscale(100%);
+}
+
+.contacts [class*="ymaps-2"][class*="-ground-pane"] {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+}
+
 .contacts iframe {
-  width: 100vw;
+  width: 100%;
+}
+
+.contacts .inline-image path {
+  color: red;
+  fill: red;
 }
 
 .contacts__wa-phone {
@@ -1776,13 +1786,107 @@ picture > * {
 }
 
 .contacts__info {
-  max-width: 300px;
+  max-width: 297px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
 
 .contacts__info img {
   border-radius: 0;
+}
+
+.comming-soon {
+  background: #F6F6F6;
+  padding: 6rem 1rem;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.p-404 {
+  background: #828282;
+}
+
+.p-plug__block {
+  padding-top: 5rem;
+}
+
+.p-plug * {
+  color: white !important;
+}
+
+.p-plug__title-small {
+  font-family: 'Futura New';
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.p-plug__title-big {
+  font-family: 'Futura New';
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.p-plug__text {
+  margin: 2rem 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  max-width: 660px;
+}
+
+.p-plug__img-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 23vw;
+}
+
+.policy-page__text {
+  color: #4F4F4F;
+}
+
+.policy-page__text .fw-bolder {
+  coor: #333333;
+}
+
+.p-order {
+  background: #219653;
+}
+
+.p-order__block {
+  padding-bottom: 530px;
+}
+
+.p-order__big-text {
+  font-family: 'Futura New';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.p-order .catalog-back {
+  margin-left: auto;
+}
+
+.ymaps-2-1-79-controls__toolbar {
+  display: none;
 }
 
 @media screen and (min-width: 576px) {
@@ -1842,6 +1946,10 @@ picture > * {
 }
 
 @media screen and (min-width: 767.9px) {
+  .casual-slider picture {
+    padding: 0 20px;
+  }
+
   .blog-page__categories {
     max-width: 75%;
   }
@@ -1914,6 +2022,7 @@ picture > * {
 
   .about__add-info-contacts {
     margin-top: 150px;
+    padding-left: 45px;
   }
 
   .gallery__bottom {
@@ -1997,6 +2106,10 @@ picture > * {
 
   .gap-lg-5 {
     gap: 3rem !important;
+  }
+
+  .base-price-info .num-list {
+    max-height: 542px;
   }
 }
 
@@ -2134,6 +2247,10 @@ picture > * {
   .footer-footer__links-wa a {
     font-size: 14px;
   }
+
+  .construct-desc__title::before {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -2148,6 +2265,10 @@ picture > * {
   }
 
   .footer-footer .footer-img {
+    display: none;
+  }
+
+  .p-plug__img-2 {
     display: none;
   }
 }
@@ -2181,6 +2302,18 @@ picture > * {
 
   .footer-footer__subscribe {
     font-size: 18px !important;
+  }
+
+  .plans .card .ask-questions {
+    margin-top: 1rem;
+  }
+
+  .p-plug__title-small {
+    font-size: 9vw;
+  }
+
+  .p-plug__title-big {
+    font-size: 13vw;
   }
 }
 @supports (-webkit-appearance:none){

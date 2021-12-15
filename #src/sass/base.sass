@@ -17,12 +17,14 @@ $dark-text: #4F4F4F;
 
 $yellow: #F4E9BF;
 $red: #DA5C3E;
+$green: #219653;
 
 $red-dark: #B44D35;
 $light: #FFF9E2;
 $light-grey: #E5E5E5;
 $light-back: #F2F2F2
 $grey: #828282;
+$coming-soon: #F6F6F6
 
 /*Общие стили*/  
 a
@@ -79,7 +81,7 @@ p
     line-height: 25px;
     letter-spacing: 0em;
     text-align: left
-    
+
 .small-text
     color: $grey
     font-size: 14px;
@@ -168,7 +170,7 @@ h2
         font-size: 36px;
     font-style: normal;
     font-weight: 600 !important;
-    line-height: 45px;
+    line-height: 125%;
     letter-spacing: 0em;
     text-align: left;
 
@@ -354,7 +356,10 @@ picture
 
 .casual-slider
     picture
-        padding: 0 20px
+        padding: 0 10px
+
+        @media screen and ( min-width: $m-md )
+            padding: 0 20px
 
 .slick-slide > *
     width: fit-content

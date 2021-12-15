@@ -26,7 +26,16 @@ $(document).ready(function () {
     arrows: true,
     centerMode: true,
     centerPadding: '25%',
-    slidesToShow: 1
+    slidesToShow: 1,
+
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          centerPadding: '40px',
+        }
+      },
+    ]
   });
 			
 })

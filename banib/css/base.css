@@ -329,7 +329,7 @@ h2 {
   font-size: 7vw;
   font-style: normal;
   font-weight: 600 !important;
-  line-height: 45px;
+  line-height: 125%;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -544,7 +544,7 @@ picture > * {
 }
 
 .casual-slider picture {
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .slick-slide > * {
@@ -630,6 +630,12 @@ picture > * {
 
   .gap-sm-5 {
     gap: 3rem !important;
+  }
+}
+
+@media screen and (min-width: 767.9px) {
+  .casual-slider picture {
+    padding: 0 20px;
   }
 }
 
@@ -892,6 +898,14 @@ picture > * {
 }
 
  @media screen and (min-width: 576px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (min-width: 767.9px){
 
 @supports (-webkit-appearance:none){
 

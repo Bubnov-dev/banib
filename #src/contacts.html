@@ -31,12 +31,14 @@
 
     </div>
 
-    <iframe class="mt-5" src="https://yandex.ru/map-widget/v1/?um=constructor%3A5ed1e3da4c43992c56f87bd46df24361ca5050418f244707428093dc061c2cf4&amp;source=constructor" width="1280" height="566" frameborder="0"></iframe>
-   
+    <!-- <iframe id="map" class="mt-5" src="https://yandex.ru/map-widget/v1/?um=constructor%3A5ed1e3da4c43992c56f87bd46df24361ca5050418f244707428093dc061c2cf4&amp;source=constructor" width="1280" height="566" frameborder="0"></iframe> -->
+    <div id="map" style="width:100%; height:520px;"></div>
+
+
     <div class="container mt-5">
-        <div class="row contacts__row">
+        <div class="row contacts__row g-3">
             <div class="col-md-7">
-                <div class="row g-5">
+                <div class="row g-md-5 g-3">
                     <div class="col-md-6">
                         <div class="contacts__small-title plain-text">
                             Телефон:
@@ -99,6 +101,7 @@
     </div>
     
 </main>
+
 <script src="js/jq.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="../js/simpleParallax.js"></script>
 <script src="../js/fancybox.umd.js"></script>
@@ -106,5 +109,55 @@
 <script src="js/slick.min.js"></script>
 
 <script src="../js/script.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=4f1d96f9-4f07-4568-a013-bfe73d7846c7&amp;lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+         ymaps.ready(init);
+        function init() {
+        
+            // Создание карты.
+        
+            // Строка с адресом, который необходимо геокодировать
+            var address = ' Ленинградская область, Приозерский район, поселок Сосново, ул. Академическая д.1';
+        
+            // Ищем координаты указанного адреса
+            // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/geocode-docpage/
+            var geocoder = ymaps.geocode(address);
+        
+            // После того, как поиск вернул результат, вызывается callback-функция
+            geocoder.then(
+                function (res) {
+        
+                    // координаты объекта
+                    var coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+        
+        var myMap = new ymaps.Map("map", {
+        center:coordinates,
+                zoom: 7.7,
+                center: [60.252768, 30.0646703],
+
+        checkZoomRange: true
+            }, {
+                    searchControlProvider: 'yandex#search'
+                });
+        
+                    // Добавление метки (Placemark) на карту
+                    var placemark = new ymaps.Placemark(
+                        coordinates, {
+                            'hintContent': address,
+                            'balloonContent': 'Время работы: Пн-Пт, с 9 до 20'
+                        }, {
+                            'preset': 'islands#redDotIcon'
+                        }
+                    );
+                    myMap.geoObjects.add(placemark);
+                }
+            );
+        
+        }
+        // ]]>
+    });
+    
+    </script>
 </body>
 </html>
