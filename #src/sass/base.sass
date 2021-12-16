@@ -10,7 +10,7 @@ $xl: 1200px
 $xxl: 1400px
 
 
-
+$modal-fade-transform: scale(.8) !important
 /* Цвета */
 $dark: #333333;
 $dark-text: #4F4F4F;
@@ -61,6 +61,11 @@ a:hover
     color: $red !important
     *
         color: $red !important
+
+.dark 
+    color: $dark !important
+    * 
+        color: $dark !important
 
 .plain-text
     font-size: 16px;
@@ -381,6 +386,66 @@ picture
         grid-row: 1/2
         color: black !important
 
+.modal-content
+    padding: 3rem 5rem
+    max-width: 70vw
+    box-sizing: content-box
+    width: 370px
+
+    .modal-body
+        color: $grey
+
+    .plain-text
+        color: $grey
+
+
+    h2
+        max-width: 100%
+
+    .btn-close
+        position: absolute
+        top: 2rem
+        right: 2rem
+
+    .modal-header
+        border: none
+
+    .modal-body
+        padding-top: 4px
+        padding-bottom: 4px
+
+    form
+        margin-top: 20px
+
+    input
+        // padding-top: 0 !important
+        padding-left: 0 !important
+        border-radius: 0
+        border: none
+        border-bottom: 1px solid $grey
+        box-shadow: none !important
+
+    label
+        padding-left: 0 !important
+
+    .def__btns
+        margin-top: 3rem
+
+    .modal-close
+        cursor: pointer
+
+    .agreement
+        max-width: 260px
+        box-sizing: content-box
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    
+
 
 .hstack
   &-sm
@@ -578,3 +643,5 @@ picture
     &-xxl-5
         @media screen and ( min-width: $xxl )
             gap: 3rem !important;
+
+

@@ -35,7 +35,7 @@
 
     <div class="card-info mt-md-5 mt-3">
         <div class="container">
-            <div class="row">
+            <div class="row gx-5 card-info__base">
                 <div class="col-md-6">
                    <img class="mb-3" src="img/card-1.png" alt="">
 
@@ -104,7 +104,7 @@
                     <img class="mb-3" src="img/card-1.png" alt="">
 
                     <div class="mb-5 btns def__btns hstack gap-3 card-subhead">
-                        <button class="btn btn-cons">
+                        <button class="btn btn-primary">
                             Оформить заказ  
                         </button>
 
@@ -130,6 +130,10 @@
                             </ul>
                     </div>
                 </div>
+                <picture class="parallax-tree">
+                    <img src="img/tree.png" alt="" class="parallax">
+                    
+                </picture>
             </div>
             <div class="plans mt-5">
                 <h2 class="h2 mb-5">Варианты планировок</h2>
@@ -340,7 +344,7 @@
                     Изготовим и доставим баню вашей мечты, в короткие сроки и по фиксированной цене
                 </div>
                 <div class="btns def__btns hstack gap-3 col-md-6">
-                    <button class="btn btn-cons">
+                    <button class="btn btn-primary">
                         Оформить заказ  
                     </button>
 
@@ -356,7 +360,7 @@
     <div class="options mt-5">
         <div class="container">
             <h2 class="h2">Дополнительные опции</h2>
-            <div class="row mt-1 g-3 g-md-5">
+            <div class="row options__row mt-1 g-3">
                 <div class="card col-6 col-md-3" >
                     <img src="img/option.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -451,11 +455,10 @@
                 
             </div>
 
-            <div class="options__and-more mt-5">
+            <div class="options__and-more mt-4">
                 И ещё много дополнительных опций, такие как: рундуки для хранения вещей в полках, полочки для хранения банных принадлежностей, уличное освещение бани, минишкафы с дверцами и прочее.
             </div>
         </div>
-        
     </div>
 </main>
 <script src="js/jq.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -465,5 +468,15 @@
 <script src="js/slick.min.js"></script>
 
 <script src="../js/script.js"></script>
+<script>
+    var image = document.getElementsByClassName('parallax');
+
+    paralax = new simpleParallax(image, {
+      delay: 0,
+      scale: 1.1,
+      overflow: true,
+      orientation: 'down',
+  });
+</script>
 </body>
 </html>

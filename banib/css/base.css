@@ -215,6 +215,14 @@ a:hover {
   color: #DA5C3E !important;
 }
 
+.dark {
+  color: #333333 !important;
+}
+
+.dark * {
+  color: #333333 !important;
+}
+
 .plain-text {
   font-size: 16px;
   font-style: normal;
@@ -571,6 +579,78 @@ picture > * {
   grid-column: 1/2;
   grid-row: 1/2;
   color: black !important;
+}
+
+.modal-content {
+  padding: 3rem 5rem;
+  max-width: 70vw;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 370px;
+}
+
+.modal-content .modal-body {
+  color: #828282;
+}
+
+.modal-content .plain-text {
+  color: #828282;
+}
+
+.modal-content h2 {
+  max-width: 100%;
+}
+
+.modal-content .btn-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.modal-content .modal-header {
+  border: none;
+}
+
+.modal-content .modal-body {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.modal-content form {
+  margin-top: 20px;
+}
+
+.modal-content input {
+  padding-left: 0 !important;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #828282;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.modal-content label {
+  padding-left: 0 !important;
+}
+
+.modal-content .def__btns {
+  margin-top: 3rem;
+}
+
+.modal-content .modal-close {
+  cursor: pointer;
+}
+
+.modal-content .agreement {
+  max-width: 260px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .gap-0 {
