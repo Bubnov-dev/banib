@@ -27,6 +27,10 @@ $grey: #828282;
 $coming-soon: #F6F6F6
 
 /*Общие стили*/  
+
+.fw-bolder
+    font-family: 'Futura New';
+
 a
     color: $dark
 .article-content
@@ -38,6 +42,7 @@ a
             &::before
                 display: grid
                 margin-top: 0.8rem
+                height: 1px
                 content: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2240%22%20height%3D%221%22%20viewBox%3D%220%200%2040%201%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cline%20y1%3D%220.5%22%20x2%3D%2240%22%20y2%3D%220.5%22%20stroke%3D%22%23828282%22%2F%3E%0A%3C%2Fsvg%3E%0A');
 
 .link-like
@@ -86,6 +91,9 @@ p
     line-height: 25px;
     letter-spacing: 0em;
     text-align: left
+
+.medium-text
+    font-size: 18px
 
 .small-text
     color: $grey
@@ -168,11 +176,11 @@ h1
     text-align: left;
 
 h2
-    font-size: 7vw;
+    font-size: 7vw !important;
 
     @media screen and ( min-width: $md )
         max-width: 60%
-        font-size: 36px;
+        font-size: 36px !important;
     font-style: normal;
     font-weight: 600 !important;
     line-height: 125%;
@@ -366,9 +374,12 @@ picture
         @media screen and ( min-width: $m-md )
             padding: 0 20px
 
-.slick-slide > *
-    width: fit-content
+.slick-slide 
+    & > *
+    width: 100%
     margin: auto
+    img
+        width: 100%
 
 .slick-arrow
     width: 55px
